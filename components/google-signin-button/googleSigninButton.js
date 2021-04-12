@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { GoogleSignin, statusCodes, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import { Alert, Button, SafeAreaView, StyleSheet, View, Text } from 'react-native';
-import { GOOGLE_CONSTANTS } from '../constants/main';
+import { GOOGLE_CONSTANTS } from '../../constants/main';
 
-export default class GoogleSigninButtton extends Component {
+export default class GoogleSigninButtonComponent extends Component {
 
     state = {
         userInfo: null,
@@ -100,7 +100,7 @@ export default class GoogleSigninButtton extends Component {
                 <View>
                     <Button
                         onPress={this.signOut}
-                        title="LogOut">hell</Button>
+                        title="LogOut"></Button>
                 </View>
             </SafeAreaView>
         )

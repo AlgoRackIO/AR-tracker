@@ -10,10 +10,11 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { firebase } from "@react-native-firebase/auth";
-import Login from "./components/login";
-import SignUp from "./components/signup";
+import Login from "./components/login/login";
+import SignUp from "./components/signup/signup";
 import { primaryColor } from "./constants/common";
-import GoogleSigninButtton from "./components/googleSigninButton";
+import GoogleSigninButtonComponent from "./components/google-signin-button/googleSigninButton";
+import Login2 from "./components/login/login2";
 
 export default class MainApp extends Component {
   state = {
@@ -56,14 +57,14 @@ export default class MainApp extends Component {
           </View>
         ) : (
           <View style={{ flex: 1 }}>
-            {this.state.isLogin ? <Login /> : <SignUp />}
-            <GoogleSigninButtton/>
+            {!this.state.isLogin ? <Login2 /> : <SignUp2 />}
+            {/* <GoogleSigninButtonComponent/> */}
 
-            <View style={styles.loginButtonContainerStyle}>
+            {/* <View style={styles.loginButtonContainerStyle}>
               <TouchableOpacity style={styles.loginButtonStyle} onPress={() => this.setState(state => ({ isLogin: !state.isLogin }))}>
                 <Text style={styles.loginButtonTextStyle}> {this.state.isLogin ? "New? Create account." : "Already have account? Log In"}</Text>
               </TouchableOpacity>
-            </View>
+            </View> */}
           </View>
         )}
       </View>
